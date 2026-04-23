@@ -197,6 +197,30 @@ server.tool(
     }
 );
 
+server.tool(
+    "delete_project",
+    "Permanently delete a project by ID. This action cannot be undone.",
+    {
+        id: z.string().describe("Project UUID"),
+    },
+    async (args) => {
+        const result = await api(`projects/${args.id}`, { method: "DELETE" });
+        return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
+    }
+);
+
+server.tool(
+    "delete_task",
+    "Permanently delete a task by ID. This action cannot be undone.",
+    {
+        id: z.string().describe("Task UUID"),
+    },
+    async (args) => {
+        const result = await api(`tasks/${args.id}`, { method: "DELETE" });
+        return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
+    }
+);
+
 // ─── Comments ─────────────────────────────────────────────────────
 
 server.tool(

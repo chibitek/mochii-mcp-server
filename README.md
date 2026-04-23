@@ -45,10 +45,12 @@ Add to your MCP config:
 | `get_project` | Get project by ID |
 | `create_project` | Create a new project |
 | `update_project` | Update project fields |
+| `delete_project` | Permanently delete a project |
 | `list_tasks` | List tasks (filter by project, status, assignee) |
 | `get_task` | Get task details + comment count |
 | `create_task` | Create a new task |
 | `update_task` | Update task fields |
+| `delete_task` | Permanently delete a task |
 | `list_comments` | List comments on a task |
 | `add_comment` | Add a comment to a task |
 | `list_clients` | List clients |
